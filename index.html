@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday? 🎂</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #fff0f5;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        color: #ff69b4;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 12px;
+        margin: 15px 0;
+      }
+
+      .expander {
+        margin-top: 20px;
+      }
+
+      .expander button {
+        width: 100%;
+        padding: 10px;
+        background-color: #ffe4e1;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .expander-content {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .footer {
+        text-align: center;
+        color: gray;
+        margin-top: 30px;
+      }
+
+      .input-group {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      input[type='text'] {
+        padding: 10px;
+        width: 80%;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        font-size: 1rem;
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 15px;
+        }
+
+        input[type='text'] {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="login-page">
+      <h1>🎉 Ada apaan lagi sih ini tuh 🎂</h1>
+      <div class="input-group">
+        <input type="text" id="nama" placeholder="Masukkan nama kamu dulu ya" />
+        <br />
+        <button onclick="cekLogin()">Masuk</button>
+      </div>
+    </div>
+
+    <div class="container hidden" id="birthday-page">
+      <img src="https://i.imgur.com/wx2YFFL.jpg" alt="Foto pasangan sayang" />
+      <h2>🎂 Selamat Ulang Tahun, Sayangku Cintaku My Fuufu! 💖</h2>
+      <p style="text-align: center; line-height: 1.8">
+        Terima kasih karena sudah selalu ada untukku.<br />
+        Terima kasih atas kesabaranmu menghadapi segala kekuranganku.<br />
+        Terima kasih atas perhatianmu yang tak pernah habis setiap hari.<br />
+        Terima kasih karena kamu terus bertahan, mencintai dan menyayangiku dengan tulus.<br /><br />
+        Di hari spesial ini, aku hanya ingin kamu tahu...<br />
+        Kamu adalah hal terindah yang pernah hadir dalam hidupku.<br />
+        Semoga semua doa baik yang kamu panjatkan hari ini, Tuhan jawab satu per satu, ya.<br /><br />
+        Aku sayang kamu, selalu. 💕<br /><br />
+        💕 Selamat ulang tahun, sayangku. 💕
+      </p>
+
+      <div class="expander">
+        <button onclick="toggleExtra()">Klik untuk melihat pesan tambahan</button>
+        <div class="expander-content" id="extra">
+          <ul>
+            <li>Kamu itu spesial, lebih dari kata-kata bisa ungkapkan.</li>
+            <li>Setiap hari bersamamu adalah berkah.</li>
+            <li>Jangan lupa aku selalu ada buat kamu, selalu inget sama goals kita dalam hubungan ini, always be happy my fuufuuu. 😊</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Dari yang selalu mencintaimu ❤️</p>
+      </div>
+    </div>
+
+    <script>
+      function cekLogin() {
+        const nama = document.getElementById('nama').value.trim().toLowerCase();
+        if (nama === 'veren') {
+          alert('🎉 Halooo my fuufuuu, ciee Ulang TAhunnn 🥳💖');
+          document.getElementById('login-page').classList.add('hidden');
+          document.getElementById('birthday-page').classList.remove('hidden');
+        } else {
+          alert('❌ Kamu siapaa kamu SIAPAA!!! 😤');
+        }
+      }
+
+      function toggleExtra() {
+        const extra = document.getElementById('extra');
+        extra.style.display = extra.style.display === 'block' ? 'none' : 'block';
+      }
+    </script>
+  </body>
+</html>
